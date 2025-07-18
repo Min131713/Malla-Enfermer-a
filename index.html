@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva Enfermería</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .semestre {
+      margin-bottom: 30px;
+    }
+
+    .materia {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px;
+      width: 180px;
+      height: 100px;
+      background-color: #aaa;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      opacity: 0.5;
+      cursor: not-allowed;
+      transition: 0.3s;
+    }
+
+    .materia.activa {
+      background-color: #3498db;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .materia.completada {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🩺 Malla Interactiva - Enfermería</h1>
+
+  <div class="semestre">
+    <h2>Semestre 1</h2>
+    <div class="materia activa" onclick="desbloquear(1)">Anatomía y Fisiología I</div>
+    <div class="materia" id="materia1" onclick="desbloquear(2)">Biología</div>
+    <div class="materia" id="materia2" onclick="desbloquear(3)">Comunicación Oral y Escrita</div>
+    <div class="materia" id="materia3" onclick="desbloquear(4)">Fund. Filosóficos de T.A.</div>
+    <div class="materia" id="materia4" onclick="desbloquear(5)">Psicología General</div>
+    <div class="materia" id="materia5" onclick="desbloquear(6)">Cátedra Manuela Beltrán</div>
+  </div>
+
+  <div class="semestre">
+    <h2>Semestre 2</h2>
+    <div class="materia" id="materia6" onclick="desbloquear(7)">Anatomía y Fisiología II</div>
+    <div class="materia" id="materia7" onclick="desbloquear(8)">Química</div>
+    <div class="materia" id="materia8" onclick="desbloquear(9)">Introducción al Cuidado</div>
+    <div class="materia" id="materia9" onclick="desbloquear(10)">Lógica Matemática</div>
+    <div class="materia" id="materia10" onclick="desbloquear(11)">Psicología del Comportamiento</div>
+  </div>
+
+  <script>
+    function desbloquear(num) {
+      let actual = event.target;
+      if (!actual.classList.contains("activa")) return;
+      actual.classList.remove("activa");
+      actual.classList.add("completada");
+
+      let siguiente = document.getElementById("materia" + num);
+      if (siguiente) siguiente.classList.add("activa");
+    }
+  </script>
+
+</body>
+</html>
