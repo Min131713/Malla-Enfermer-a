@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva - Enfermería</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <h1>🩺 Malla Interactiva - Enfermería UMB</h1>
+
+  <div class="progreso">
+    <p>Has completado <span id="cont-completadas">0</span> de 72 asignaturas</p>
+    <div class="barra-container">
+      <div class="barra" id="barra-progreso"></div>
+    </div>
+  </div>
+<div class="semestre">
+  <h2>Semestre 1</h2>
+  <div class="materias">
+    <div class="materia activa" onclick="desbloquear(1)">Materia 1</div>
+    <div class="materia" id="materia1" onclick="desbloquear(2)">Materia 2</div>
+    <div class="materia" id="materia2" onclick="desbloquear(3)">Materia 3</div>
+    <div class="materia" id="materia3" onclick="desbloquear(4)">Materia 4</div>
+    <div class="materia" id="materia4" onclick="desbloquear(5)">Materia 5</div>
+    <div class="materia" id="materia5" onclick="desbloquear(6)">Materia 6</div>
+    <div class="materia" id="materia6" onclick="desbloquear(7)">Materia 7</div>
+    <div class="materia" id="materia7" onclick="desbloquear(8)">Materia 8</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 2</h2>
+  <div class="materias">
+    <div class="materia" id="materia8" onclick="desbloquear(9)">Materia 9</div>
+    <div class="materia" id="materia9" onclick="desbloquear(10)">Materia 10</div>
+    <div class="materia" id="materia10" onclick="desbloquear(11)">Materia 11</div>
+    <div class="materia" id="materia11" onclick="desbloquear(12)">Materia 12</div>
+    <div class="materia" id="materia12" onclick="desbloquear(13)">Materia 13</div>
+    <div class="materia" id="materia13" onclick="desbloquear(14)">Materia 14</div>
+    <div class="materia" id="materia14" onclick="desbloquear(15)">Materia 15</div>
+    <div class="materia" id="materia15" onclick="desbloquear(16)">Materia 16</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 3</h2>
+  <div class="materias">
+    <div class="materia" id="materia16" onclick="desbloquear(17)">Materia 17</div>
+    <div class="materia" id="materia17" onclick="desbloquear(18)">Materia 18</div>
+    <div class="materia" id="materia18" onclick="desbloquear(19)">Materia 19</div>
+    <div class="materia" id="materia19" onclick="desbloquear(20)">Materia 20</div>
+    <div class="materia" id="materia20" onclick="desbloquear(21)">Materia 21</div>
+    <div class="materia" id="materia21" onclick="desbloquear(22)">Materia 22</div>
+    <div class="materia" id="materia22" onclick="desbloquear(23)">Materia 23</div>
+    <div class="materia" id="materia23" onclick="desbloquear(24)">Materia 24</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 4</h2>
+  <div class="materias">
+    <div class="materia" id="materia24" onclick="desbloquear(25)">Materia 25</div>
+    <div class="materia" id="materia25" onclick="desbloquear(26)">Materia 26</div>
+    <div class="materia" id="materia26" onclick="desbloquear(27)">Materia 27</div>
+    <div class="materia" id="materia27" onclick="desbloquear(28)">Materia 28</div>
+    <div class="materia" id="materia28" onclick="desbloquear(29)">Materia 29</div>
+    <div class="materia" id="materia29" onclick="desbloquear(30)">Materia 30</div>
+    <div class="materia" id="materia30" onclick="desbloquear(31)">Materia 31</div>
+    <div class="materia" id="materia31" onclick="desbloquear(32)">Materia 32</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 5</h2>
+  <div class="materias">
+    <div class="materia" id="materia32" onclick="desbloquear(33)">Materia 33</div>
+    <div class="materia" id="materia33" onclick="desbloquear(34)">Materia 34</div>
+    <div class="materia" id="materia34" onclick="desbloquear(35)">Materia 35</div>
+    <div class="materia" id="materia35" onclick="desbloquear(36)">Materia 36</div>
+    <div class="materia" id="materia36" onclick="desbloquear(37)">Materia 37</div>
+    <div class="materia" id="materia37" onclick="desbloquear(38)">Materia 38</div>
+    <div class="materia" id="materia38" onclick="desbloquear(39)">Materia 39</div>
+    <div class="materia" id="materia39" onclick="desbloquear(40)">Materia 40</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 6</h2>
+  <div class="materias">
+    <div class="materia" id="materia40" onclick="desbloquear(41)">Materia 41</div>
+    <div class="materia" id="materia41" onclick="desbloquear(42)">Materia 42</div>
+    <div class="materia" id="materia42" onclick="desbloquear(43)">Materia 43</div>
+    <div class="materia" id="materia43" onclick="desbloquear(44)">Materia 44</div>
+    <div class="materia" id="materia44" onclick="desbloquear(45)">Materia 45</div>
+    <div class="materia" id="materia45" onclick="desbloquear(46)">Materia 46</div>
+    <div class="materia" id="materia46" onclick="desbloquear(47)">Materia 47</div>
+    <div class="materia" id="materia47" onclick="desbloquear(48)">Materia 48</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 7</h2>
+  <div class="materias">
+    <div class="materia" id="materia48" onclick="desbloquear(49)">Materia 49</div>
+    <div class="materia" id="materia49" onclick="desbloquear(50)">Materia 50</div>
+    <div class="materia" id="materia50" onclick="desbloquear(51)">Materia 51</div>
+    <div class="materia" id="materia51" onclick="desbloquear(52)">Materia 52</div>
+    <div class="materia" id="materia52" onclick="desbloquear(53)">Materia 53</div>
+    <div class="materia" id="materia53" onclick="desbloquear(54)">Materia 54</div>
+    <div class="materia" id="materia54" onclick="desbloquear(55)">Materia 55</div>
+    <div class="materia" id="materia55" onclick="desbloquear(56)">Materia 56</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 8</h2>
+  <div class="materias">
+    <div class="materia" id="materia56" onclick="desbloquear(57)">Materia 57</div>
+    <div class="materia" id="materia57" onclick="desbloquear(58)">Materia 58</div>
+    <div class="materia" id="materia58" onclick="desbloquear(59)">Materia 59</div>
+    <div class="materia" id="materia59" onclick="desbloquear(60)">Materia 60</div>
+    <div class="materia" id="materia60" onclick="desbloquear(61)">Materia 61</div>
+    <div class="materia" id="materia61" onclick="desbloquear(62)">Materia 62</div>
+    <div class="materia" id="materia62" onclick="desbloquear(63)">Materia 63</div>
+    <div class="materia" id="materia63" onclick="desbloquear(64)">Materia 64</div>
+  </div>
+</div>
+
+<div class="semestre">
+  <h2>Semestre 9</h2>
+  <div class="materias">
+    <div class="materia" id="materia64" onclick="desbloquear(65)">Materia 65</div>
+    <div class="materia" id="materia65" onclick="desbloquear(66)">Materia 66</div>
+    <div class="materia" id="materia66" onclick="desbloquear(67)">Materia 67</div>
+    <div class="materia" id="materia67" onclick="desbloquear(68)">Materia 68</div>
+    <div class="materia" id="materia68" onclick="desbloquear(69)">Materia 69</div>
+    <div class="materia" id="materia69" onclick="desbloquear(70)">Materia 70</div>
+    <div class="materia" id="materia70" onclick="desbloquear(71)">Materia 71</div>
+    <div class="materia" id="materia71" >Materia 72</div>
+  </div>
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
