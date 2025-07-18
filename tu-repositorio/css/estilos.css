@@ -31,9 +31,9 @@ h1 {
 .materia {
   width: 200px;
   height: 100px;
-  background-color: #bdc3c7;
+  background-color: #f8d6e0;  /* ROSA PASTEL CLARO */
   border-radius: 12px;
-  color: white;
+  color: #5e466c;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -45,13 +45,14 @@ h1 {
 }
 
 .materia.activa {
-  background-color: #3498db;
+  background-color: #c9b6e4;  /* LILA SUAVE */
   opacity: 1;
   cursor: pointer;
 }
 
 .materia.completada {
-  background-color: #2ecc71;
+  background-color: #a084ca;  /* MORADO PASTEL */
+  color: white;
   cursor: default;
   opacity: 1;
 }
