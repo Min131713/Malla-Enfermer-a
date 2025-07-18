@@ -1,64 +1,249 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f9fb;
-  margin: 0;
-  padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva - Enfermería</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefcff;
+      margin: 0;
+      padding: 20px;
+    }
 
-h1 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 30px;
-}
+    h1 {
+      text-align: center;
+      color: #7e4b94;
+    }
 
-.semestre {
-  margin-bottom: 40px;
-}
+    .progreso {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-.semestre h2 {
-  color: #34495e;
-  margin-left: 10px;
-}
+    .barra-container {
+      width: 80%;
+      margin: 10px auto;
+      background-color: #f8d6e0;
+      border-radius: 20px;
+      height: 20px;
+      overflow: hidden;
+    }
 
-.materias {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: flex-start;
-  margin-top: 10px;
-}
+    .barra {
+      height: 100%;
+      width: 0%;
+      background-color: #c9b6e4;
+      transition: width 0.3s ease;
+    }
 
-.materia {
-  width: 200px;
-  height: 100px;
-  background-color: #f8d6e0;  /* ROSA PASTEL CLARO */
-  border-radius: 12px;
-  color: #5e466c;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: not-allowed;
-  opacity: 0.4;
-  transition: all 0.3s ease;
-}
+    .semestre {
+      margin-bottom: 40px;
+    }
 
-.materia.activa {
-  background-color: #c9b6e4;  /* LILA SUAVE */
-  opacity: 1;
-  cursor: pointer;
-}
+    .semestre h2 {
+      color: #a084ca;
+      margin-bottom: 10px;
+    }
 
-.materia.completada {
-  background-color: #a084ca;  /* MORADO PASTEL */
-  color: white;
-  cursor: default;
-  opacity: 1;
-}
+    .materias {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-@media (max-width: 600px) {
-  .materia {
-    width: 100%;
+    .materia {
+      width: 200px;
+      height: 100px;
+      background-color: #f8d6e0;
+      border-radius: 12px;
+      color: #5e466c;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: not-allowed;
+      opacity: 0.4;
+      transition: all 0.3s ease;
+    }
+
+    .materia.activa {
+      background-color: #c9b6e4;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .materia.completada {
+      background-color: #a084ca;
+      color: white;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🩺 Malla Interactiva - Enfermería UMB</h1>
+
+  <div class="progreso">
+    <p>Has completado <span id="cont-completadas">0</span> de 72 asignaturas</p>
+    <div class="barra-container">
+      <div class="barra" id="barra-progreso"></div>
+    </div>
+  </div>
+  <!-- Semestre 1 -->
+  <div class="semestre">
+    <h2>Semestre 1</h2>
+    <div class="materias">
+      <div class="materia activa" onclick="desbloquear(1)">Anatomía y Fisiología I</div>
+      <div class="materia" id="materia1" onclick="desbloquear(2)">Biología</div>
+      <div class="materia" id="materia2" onclick="desbloquear(3)">Comunicación Oral y Escrita</div>
+      <div class="materia" id="materia3" onclick="desbloquear(4)">Filosofía</div>
+      <div class="materia" id="materia4" onclick="desbloquear(5)">Psicología General</div>
+      <div class="materia" id="materia5" onclick="desbloquear(6)">Cátedra Manuela Beltrán</div>
+      <div class="materia" id="materia6" onclick="desbloquear(7)">Inglés Inicial</div>
+      <div class="materia" id="materia7" onclick="desbloquear(8)">Fund. Filosóficos de T.A.</div>
+    </div>
+  </div>
+
+  <!-- Semestre 2 -->
+  <div class="semestre">
+    <h2>Semestre 2</h2>
+    <div class="materias">
+      <div class="materia" id="materia8" onclick="desbloquear(9)">Anatomía y Fisiología II</div>
+      <div class="materia" id="materia9" onclick="desbloquear(10)">Química</div>
+      <div class="materia" id="materia10" onclick="desbloquear(11)">Introducción al Cuidado</div>
+      <div class="materia" id="materia11" onclick="desbloquear(12)">Lógica Matemática</div>
+      <div class="materia" id="materia12" onclick="desbloquear(13)">Psicología del Comportamiento</div>
+      <div class="materia" id="materia13" onclick="desbloquear(14)">Inglés Básico 1</div>
+      <div class="materia" id="materia14" onclick="desbloquear(15)">Constitución Política</div>
+      <div class="materia" id="materia15" onclick="desbloquear(16)">Ética</div>
+    </div>
+  </div>
+
+  <!-- Semestre 3 -->
+  <div class="semestre">
+    <h2>Semestre 3</h2>
+    <div class="materias">
+      <div class="materia" id="materia16" onclick="desbloquear(17)">Microbiología y Parasitología</div>
+      <div class="materia" id="materia17" onclick="desbloquear(18)">Herbología, Salud y Nutrición</div>
+      <div class="materia" id="materia18" onclick="desbloquear(19)">Enfermería Social y Comunitaria</div>
+      <div class="materia" id="materia19" onclick="desbloquear(20)">Inglés Básico 2</div>
+      <div class="materia" id="materia20" onclick="desbloquear(21)">Terapias Manuales Generales</div>
+      <div class="materia" id="materia21" onclick="desbloquear(22)">Estrategias de Pensamiento</div>
+      <div class="materia" id="materia22" onclick="desbloquear(23)">Educación Ambiental</div>
+      <div class="materia" id="materia23" onclick="desbloquear(24)">Antropología</div>
+    </div>
+  </div>
+
+  <!-- Semestre 4 -->
+  <div class="semestre">
+    <h2>Semestre 4</h2>
+    <div class="materias">
+      <div class="materia" id="materia24" onclick="desbloquear(25)">Salud Pública</div>
+      <div class="materia" id="materia25" onclick="desbloquear(26)">Estadística</div>
+      <div class="materia" id="materia26" onclick="desbloquear(27)">Terapias Manuales Específicas</div>
+      <div class="materia" id="materia27" onclick="desbloquear(28)">Farmacología</div>
+      <div class="materia" id="materia28" onclick="desbloquear(29)">Enfermería del Niño y Adolescente</div>
+      <div class="materia" id="materia29" onclick="desbloquear(30)">Ética Profesional</div>
+      <div class="materia" id="materia30" onclick="desbloquear(31)">Inglés Preintermedio</div>
+      <div class="materia" id="materia31" onclick="desbloquear(32)">Investigación Cuantitativa</div>
+    </div>
+  </div>
+
+  <!-- Semestre 5 -->
+  <div class="semestre">
+    <h2>Semestre 5</h2>
+    <div class="materias">
+      <div class="materia" id="materia32" onclick="desbloquear(33)">Cuidado de Enf. Mujer y Recién Nacido</div>
+      <div class="materia" id="materia33" onclick="desbloquear(34)">Proyecto de Investigación II</div>
+      <div class="materia" id="materia34" onclick="desbloquear(35)">Farmacología Específica</div>
+      <div class="materia" id="materia35" onclick="desbloquear(36)">Terapia Transfusional y Lab</div>
+      <div class="materia" id="materia36" onclick="desbloquear(37)">Comunicación y Educación en Salud</div>
+      <div class="materia" id="materia37" onclick="desbloquear(38)">Cuidado de Enf. Adulto</div>
+      <div class="materia" id="materia38" onclick="desbloquear(39)">Práctica Mujer y Recién Nacido</div>
+      <div class="materia" id="materia39" onclick="desbloquear(40)">Psicología Social en Enfermería</div>
+    </div>
+  </div>
+
+  <!-- Semestre 6 -->
+  <div class="semestre">
+    <h2>Semestre 6</h2>
+    <div class="materias">
+      <div class="materia" id="materia40" onclick="desbloquear(41)">Proyecto de Investigación III</div>
+      <div class="materia" id="materia41" onclick="desbloquear(42)">Bioquímica</div>
+      <div class="materia" id="materia42" onclick="desbloquear(43)">Cuidado de Enf. Adulto Mayor y Salud Mental</div>
+      <div class="materia" id="materia43" onclick="desbloquear(44)">Práctica Niño y Adolescente</div>
+      <div class="materia" id="materia44" onclick="desbloquear(45)">Práctica Enf. Adulto Mayor y Salud Mental</div>
+      <div class="materia" id="materia45" onclick="desbloquear(46)">Equipos de Diagnóstico</div>
+      <div class="materia" id="materia46" onclick="desbloquear(47)">Administración y Gestión del Cuidado</div>
+      <div class="materia" id="materia47" onclick="desbloquear(48)">Orientación Filosófica a la Enfermería</div>
+    </div>
+  </div>
+
+  <!-- Semestre 7 -->
+  <div class="semestre">
+    <h2>Semestre 7</h2>
+    <div class="materias">
+      <div class="materia" id="materia48" onclick="desbloquear(49)">Proyecto de Investigación IV</div>
+      <div class="materia" id="materia49" onclick="desbloquear(50)">Práctica Enf. Adulto Crítico</div>
+      <div class="materia" id="materia50" onclick="desbloquear(51)">Tratamiento Integral con T.A.</div>
+      <div class="materia" id="materia51" onclick="desbloquear(52)">Legislación y Salud Ocupacional</div>
+      <div class="materia" id="materia52" onclick="desbloquear(53)">Fund. Científicos de T.A.</div>
+      <div class="materia" id="materia53" onclick="desbloquear(54)">Semiótica General</div>
+      <div class="materia" id="materia54" onclick="desbloquear(55)">Teorías de la Medicina Tradicional Asiática</div>
+      <div class="materia" id="materia55" onclick="desbloquear(56)">Inglés Intermedio</div>
+    </div>
+  </div>
+
+  <!-- Semestre 8 -->
+  <div class="semestre">
+    <h2>Semestre 8</h2>
+    <div class="materias">
+      <div class="materia" id="materia56" onclick="desbloquear(57)">Investigación Cualitativa</div>
+      <div class="materia" id="materia57" onclick="desbloquear(58)">Electiva Universal</div>
+      <div class="materia" id="materia58" onclick="desbloquear(59)">Electivo Humanidades</div>
+      <div class="materia" id="materia59" onclick="desbloquear(60)">Inglés Intermedio Alto</div>
+      <div class="materia" id="materia60" onclick="desbloquear(61)">Práctica de Admon y Gestión del Cuidado</div>
+      <div class="materia" id="materia61" onclick="desbloquear(62)">Enfermería Crítica del Adulto</div>
+      <div class="materia" id="materia62" onclick="desbloquear(63)">Derecho en Salud</div>
+      <div class="materia" id="materia63" onclick="desbloquear(64)">Inducción Internado</div>
+    </div>
+  </div>
+
+  <!-- Semestre 9 -->
+  <div class="semestre">
+    <h2>Semestre 9</h2>
+    <div class="materias">
+      <div class="materia" id="materia64" onclick="desbloquear(65)">Internado: Adulto</div>
+      <div class="materia" id="materia65" onclick="desbloquear(66)">Internado: Mujer y Recién Nacido</div>
+      <div class="materia" id="materia66" onclick="desbloquear(67)">Internado: Niño y Adolescente</div>
+      <div class="materia" id="materia67" onclick="desbloquear(68)">Internado: Adulto Mayor y Salud Mental</div>
+      <div class="materia" id="materia68" onclick="desbloquear(69)">Internado: Administración y Gestión</div>
+      <div class="materia" id="materia69" onclick="desbloquear(70)">Electiva Internado</div>
+      <div class="materia" id="materia70" onclick="desbloquear(71)">Internado: Terapias Alternativas</div>
+      <div class="materia" id="materia71">Trabajo de Grado</div>
+    </div>
+  </div>
+<script>
+  let completadas = 0;
+  const total = 72;
+
+  function desbloquear(num) {
+    const actual = event.target;
+    if (!actual.classList.contains("activa")) return;
+
+    actual.classList.remove("activa");
+    actual.classList.add("completada");
+
+    completadas++;
+    document.getElementById("cont-completadas").textContent = completadas;
+    document.getElementById("barra-progreso").style.width = ((completadas / total) * 100) + "%";
+
+    const siguiente = document.getElementById("materia" + num);
+    if (siguiente) siguiente.classList.add("activa");
   }
-}
+</script>
+
+</body>
+</html>
